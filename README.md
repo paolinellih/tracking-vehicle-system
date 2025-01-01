@@ -1,6 +1,6 @@
 # Track Vehicle System Documentation
 
-![Track Vehicle System](https://www.convexiconindia.com/wp-content/uploads/2021/01/How-do-GPS-and-GIS-work-together-in-vehicle-tracking-system-1.jpg)
+![Track Vehicle System](https://github.com/paolinellih/tracking-vehicle-system/blob/main/track.jpg)
 
 
 This documentation explains the architecture and setup of the Track Vehicle System. The system tracks vehicle movement in real-time and updates their positions on a map. It includes a front-end, back-end, and simulation components.
