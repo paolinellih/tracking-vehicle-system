@@ -86,7 +86,7 @@ When it is inside the /app, run the golang simulator:
    go run cmd/simulator/main.go 
    ```
 
-4. It will show a message `Consuming events from 'route' topic...`, so you know it is running
+4. It will show a message `Consuming events from 'route' topic...`, so you know it is running!
 
 ---
 
