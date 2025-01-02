@@ -40,11 +40,12 @@ Follow the steps below to set up and run the system.
 
 Ensure you have the following installed on your machine:
 
-- Docker and Docker Compose
+- Docker
 - Node.js (v16 or higher)
 - Go (v1.19 or higher)
 - MongoDB
 - Apache Kafka
+- Goggle Maps API Key (https://developers.google.com/maps/documentation/embed/get-api-key)
 
 ### Setting Up the Environment
 
@@ -87,9 +88,17 @@ When it is inside the /app, run the golang simulator:
 
 4. It will show a message `Consuming events from 'route' topic...`, so you know it is running
 
-------------------------------------------------------------------------------------------------
+---
 
 #### Nest.js HTTP
+
+Before start, create a `.env` file and put the following variables there:
+```bash
+- NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=[Your Google Maps API key]
+- NEST_API_URL=http://localhost:3000
+- DATABASE_URL="mongodb://root:root@mongo:27017/nest?authSource=admin&directConnection=true&replicaSet=rs0"
+- KAFKA_BROKER=kafka:9092
+```
 
 1. Open a new terminal in vs code, name it `nestjs http`:
    ```bash
@@ -106,6 +115,8 @@ When it is inside the /app, run the nestjs:
    ```bash
    npm run start:dev
    ```
+
+---
 
 #### Nest.js CONSUMER
 
@@ -124,10 +135,18 @@ When it is inside the /app, run the nestjs:
    npm run start:dev -- --entryFile=cmd/kafka.cmd
    ```
 
-------------------------------------------------------------------------------------------------
+---
 
 #### Next.js Frontend
 Open a new terminal in vs code, name it `next-frontend`:
+
+Before start, create a `.env` file and put the following variables there:
+```bash
+- NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=[Your Google Maps API key]
+- NEST_API_URL=http://nest:3000
+- NEXT_PUBLIC_NEST_API_URL = http://localhost:3000
+- NEXT_PUBLIC_NEXT_API_URL = http://localhost:3001/api
+```
 
 1. Go inside the next:
    ```bash
